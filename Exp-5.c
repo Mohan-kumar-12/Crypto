@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+    char text[100];
+    int a, b, i;
+    printf("Enter plaintext (UPPERCASE): ");
+    scanf("%s", text);
+    printf("Enter value of a: ");
+    scanf("%d", &a);
+    printf("Enter value of b: ");
+    scanf("%d", &b);
+    for(i = 0; text[i] != '\0'; i++)
+    {
+        text[i] = ((a * (text[i] - 'A') + b) % 26) + 'A';
+    }
+    printf("Cipher Text: %s", text);
+    return 0;
+}
